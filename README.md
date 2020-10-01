@@ -97,7 +97,7 @@ docker pull ghcr.io/mikecao/umami:mysql-latest
 To get the latest features, simply do a pull, install any new dependencies, and rebuild:
 
 ```bash
-npm stop
+kill $(ps aux | grep 'node\ .*umami.*next\ start' | awk '{print $2}')
 git pull
 npm install
 npm run build
